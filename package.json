@@ -1,0 +1,31 @@
+{
+  "name": "flyview-privacy_flashcard",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:server\" \"vite\"",
+    "server": "node --watch server/index.ts",
+    "build": "tsc -b && vite build",
+    "start": "npm run build && node server/index.ts",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "ts-fsrs": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.6",
+    "oxlint": "^1.81.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}
