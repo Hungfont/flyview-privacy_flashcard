@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { api, shortTopic, shuffle, type SessionWord } from '../api'
 import { speak } from '../speech'
 import { Example, hasCloze, NoteEditor, WordBack, WordFront } from '../components/WordParts'
+import { Pronounce } from '../components/Pronounce'
 
 type QuizType = 'meaning' | 'listen' | 'cloze' | 'chinese'
 type Question = { w: SessionWord; type: QuizType; options: { label: string; correct: boolean }[] }
@@ -131,6 +132,7 @@ export default function Learn({ onExit }: { onExit: () => void }) {
           ) : (
             <>
               <WordBack w={current} />
+              <Pronounce key={`p${current.id}`} w={current} />
               <NoteEditor key={current.id} w={current} />
               <button
                 className="btn wide"

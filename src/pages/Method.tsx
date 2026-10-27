@@ -30,7 +30,7 @@ const PRINCIPLES = [
     icon: '🎧',
     title: 'Mã hóa kép, đa giác quan (Dual coding)',
     body: 'Kết hợp nhiều kênh (nhìn chữ, nghe âm, đọc to, ngữ cảnh) tạo nhiều đường dẫn tới cùng một từ.',
-    app: 'Tự phát âm khi gặp từ mới, có nút nghe cả câu ví dụ, có phiên âm IPA và câu hỏi nghe chọn từ.',
+    app: 'Tự phát âm khi gặp từ mới, có nút nghe cả câu ví dụ, có phiên âm IPA, câu hỏi nghe chọn từ, và nút “Đọc thử” chấm phát âm của bạn kèm gợi ý sửa.',
   },
   {
     icon: '🧩',

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { api, formatInterval, type Grade, type SessionWord } from '../api'
 import { speak } from '../speech'
 import { NoteEditor, WordBack, WordFront } from '../components/WordParts'
+import { Pronounce } from '../components/Pronounce'
 
 const GRADES: { g: Grade; label: string; cls: string }[] = [
   { g: 1, label: 'Quên', cls: 'again' },
@@ -141,6 +142,7 @@ export default function Review({ mode, onExit }: { mode: 'review' | 'leech'; onE
           <>
             {!typing && <WordBack w={w} />}
             {typing && w.example && <WordBack w={{ ...w, meaning: '' }} />}
+            <Pronounce key={`p${w.id}`} w={w} />
             {w.note?.sentence && <p className="own">🇬🇧 Câu của bạn: {w.note.sentence}</p>}
             {w.note?.sentence_zh && <p className="own" lang="zh-CN">🇨🇳 Câu của bạn: {w.note.sentence_zh}</p>}
             {w.note?.mnemonic && <p className="own">💡 Mẹo nhớ: {w.note.mnemonic}</p>}
